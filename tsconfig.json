@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": [
+      "ESNext"
+    ],
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "types": [
+      "vitest/globals"
+    ],
+    "outDir": "dist",
+    "noUncheckedIndexedAccess": true
+  },
+  "include": ["src"],
+  "exclude": ["**/*.test.ts"]
+}
