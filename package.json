@@ -1,6 +1,6 @@
 {
   "name": "@integratop/retailcrm-transport-api-effect",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "RetailCRM Transport API Client based on Effect",
   "private": true,
   "author": {
