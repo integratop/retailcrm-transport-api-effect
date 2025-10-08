@@ -1,0 +1,4 @@
+.*
+_debug*
+node_modules
+dist

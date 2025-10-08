@@ -1,0 +1,75 @@
+name: release-please
+on:
+  workflow_dispatch:
+    inputs:
+      npm_publish:
+        description: Опубликовать npm пакет
+        type: boolean
+        default: false
+        required: true
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Глубина коммитов нужна для доступности ревизии github.event.before, с которой выполняется commitlint
+          fetch-depth: '$(node -e "${{ github.event.commits }}.length + 1")'
+
+      - uses: pkgxdev/setup@v4
+        with:
+          +: nodejs.org@24 pnpm.io@10.15.1
+
+      - name: Validate current commits with commitlint
+        if: github.event_name == 'push'
+        run: |
+          if ! git cat-file -e ${{ github.event.before }}; then
+            echo "[WARNING] Коммит ${{ github.event.before }} не существует" >&2
+            exit 0
+          fi
+          pnpm add -D @commitlint/cli@19.8.1 @commitlint/config-conventional@19.8.1
+          cat <<CODE > commitlint.config.mjs
+          export default { extends: ["@commitlint/config-conventional"] };
+          CODE
+          pnpm commitlint --from ${{ github.event.before }} --to HEAD --verbose
+
+      - run: pnpm install
+      - run: pnpm audit --audit-level high
+      - run: pnpm run lint
+      - run: pnpm run build
+      - run: pnpm run test
+
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+
+      - name: "Create npm package"
+        id: pack
+        run: |
+          cd dist
+          pnpm pack
+          echo "tar_name=$(find . -type f -name '*.tgz' | cut -c 3-)" >> $GITHUB_OUTPUT
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.pack.outputs.tar_name }}
+          if-no-files-found: error
+          path: dist/${{ steps.pack.outputs.tar_name }}
+
+      - name: "Publish npm package"
+        run: |
+          cd dist
+          rm -fr *.tgz
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
+          pnpm publish --registry https://registry.npmjs.org/ --tag latest --access public --no-git-checks
+        if: ${{ steps.release.outputs.release_created || github.event.inputs.npm_publish }}

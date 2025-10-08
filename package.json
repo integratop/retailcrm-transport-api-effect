@@ -1,0 +1,87 @@
+{
+  "name": "@integratop/retailcrm-transport-api-effect",
+  "version": "0.0.0",
+  "description": "RetailCRM Transport API Client based on Effect",
+  "private": true,
+  "author": {
+    "name": "Dmitriy Chudnyi",
+    "url": "https://www.chudnyi.com",
+    "email": "dmitriy@chudnyi.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "retailcrm",
+    "api",
+    "rest",
+    "json",
+    "transport",
+    "client",
+    "api-client",
+    "effect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/integratop/retailcrm-transport-api-effect.git"
+  },
+  "scripts": {
+    "clean": "rm -fr dist",
+    "get-schema": "pnpm retailcrm-transport-api-schema > .schema.json",
+    "gen-client": "pnpm openapi-gen -s .schema.json > src/client.g.ts",
+    "fix-client": "scripts/fix-client.ts < src/client.g.ts > src/._client.g.ts && mv src/._client.g.ts src/client.g.ts",
+    "pretty-client": "pnpm prettier --write src/client.g.ts",
+    "src": "pnpm get-schema && pnpm gen-client && echo pnpm fix-client && pnpm pretty-client",
+    "compile": "tsdown",
+    "strip-comments": "scripts/strip-comments.ts ./dist/*.{*js,d.*}",
+    "pretty-dist": "pnpm prettier --write ./dist/*.{*js,d.*}",
+    "copy-dist-files": "cp -r README.md LICENSE ./dist",
+    "gen-package-json": "scripts/gen-package-json.ts < package.json > dist/package.json",
+    "dist": "pnpm strip-comments && pnpm pretty-dist && pnpm copy-dist-files && pnpm gen-package-json",
+    "build": "pnpm src && pnpm compile && pnpm dist",
+    "lint": "tsc",
+    "test": "vitest --run --project unit"
+  },
+  "dependencies": {
+    "@effect/platform": "^0.82.3",
+    "effect": "^3.15.2"
+  },
+  "devDependencies": {
+    "@effect/platform-node": "^0.82.0",
+    "@integratop/retailcrm-transport-api-schema": "1.0.0",
+    "@tim-smart/openapi-gen": "0.4.13",
+    "@types/node": "24.3.1",
+    "@types/strip-comments": "2.0.4",
+    "dotenv": "17.2.3",
+    "prettier": "3.6.2",
+    "strip-comments": "2.0.1",
+    "tsdown": "0.14.2",
+    "tsx": "4.20.5",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4"
+  },
+  "engines": {
+    "node": ">= 24.0.0"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "private": false,
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
+      },
+      "./package.json": "./package.json"
+    },
+    "engines": {
+      "node": ">= 14.21.3"
+    }
+  },
+  "packageManager": "pnpm@10.15.1"
+}
