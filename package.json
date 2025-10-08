@@ -48,7 +48,7 @@
     "@effect/platform-node": "^0.82.0",
     "@integratop/retailcrm-transport-api-schema": "1.0.0",
     "@tim-smart/openapi-gen": "0.4.13",
-    "@types/node": "24.3.1",
+    "@types/node": "24.7.0",
     "@types/strip-comments": "2.0.4",
     "dotenv": "17.2.3",
     "prettier": "3.6.2",
