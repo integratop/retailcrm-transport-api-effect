@@ -56,7 +56,9 @@ export class ChannelFeature extends S.Literal("none", "receive", "send", "both")
 /**
  * Поддержка текстовых сообщений
  */
-export class TextMessageSetting extends S.Class<TextMessageSetting>("@integratop/retailcrm-transport-api-effect/TextMessageSetting")({
+export class TextMessageSetting extends S.Class<TextMessageSetting>(
+  "@integratop/retailcrm-transport-api-effect/TextMessageSetting",
+)({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -71,7 +73,9 @@ export class TextMessageSetting extends S.Class<TextMessageSetting>("@integratop
 /**
  * Поддержка аудио сообщений
  */
-export class AudioMessageSetting extends S.Class<AudioMessageSetting>("@integratop/retailcrm-transport-api-effect/AudioMessageSetting")({
+export class AudioMessageSetting extends S.Class<AudioMessageSetting>(
+  "@integratop/retailcrm-transport-api-effect/AudioMessageSetting",
+)({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   quoting: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -89,7 +93,9 @@ export class AudioMessageSetting extends S.Class<AudioMessageSetting>("@integrat
 /**
  * Поддержка файловых сообщений
  */
-export class FileMessageSetting extends S.Class<FileMessageSetting>("@integratop/retailcrm-transport-api-effect/FileMessageSetting")({
+export class FileMessageSetting extends S.Class<FileMessageSetting>(
+  "@integratop/retailcrm-transport-api-effect/FileMessageSetting",
+)({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -112,7 +118,9 @@ export class FileMessageSetting extends S.Class<FileMessageSetting>("@integratop
 /**
  * Поддержка медиа-сообщений
  */
-export class ImageMessageSetting extends S.Class<ImageMessageSetting>("@integratop/retailcrm-transport-api-effect/ImageMessageSetting")({
+export class ImageMessageSetting extends S.Class<ImageMessageSetting>(
+  "@integratop/retailcrm-transport-api-effect/ImageMessageSetting",
+)({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -135,7 +143,9 @@ export class ImageMessageSetting extends S.Class<ImageMessageSetting>("@integrat
 /**
  * Поддержка сообщений о заказах
  */
-export class OrderMessageSetting extends S.Class<OrderMessageSetting>("@integratop/retailcrm-transport-api-effect/OrderMessageSetting")({
+export class OrderMessageSetting extends S.Class<OrderMessageSetting>(
+  "@integratop/retailcrm-transport-api-effect/OrderMessageSetting",
+)({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -146,7 +156,9 @@ export class OrderMessageSetting extends S.Class<OrderMessageSetting>("@integrat
 /**
  * Поддержка сообщений о продуктах
  */
-export class ProductMessageSetting extends S.Class<ProductMessageSetting>("@integratop/retailcrm-transport-api-effect/ProductMessageSetting")({
+export class ProductMessageSetting extends S.Class<ProductMessageSetting>(
+  "@integratop/retailcrm-transport-api-effect/ProductMessageSetting",
+)({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -177,7 +189,9 @@ export class SendingPolicyOutgoing extends S.Literal("allowed", "restricted") {}
 /**
  * Политика отправки сообщений
  */
-export class SendingPolicy extends S.Class<SendingPolicy>("@integratop/retailcrm-transport-api-effect/SendingPolicy")({
+export class SendingPolicy extends S.Class<SendingPolicy>(
+  "@integratop/retailcrm-transport-api-effect/SendingPolicy",
+)({
   after_reply_timeout: S.optionalWith(SendingPolicyAfterReplyTimeout, { nullable: true }),
   new_customer: S.optionalWith(SendingPolicyNewCustomer, { nullable: true }),
   outgoing: S.optionalWith(SendingPolicyOutgoing, { nullable: true }),
@@ -186,7 +200,9 @@ export class SendingPolicy extends S.Class<SendingPolicy>("@integratop/retailcrm
 /**
  * Передача информации о статусе сообщения
  */
-export class StatusSetting extends S.Class<StatusSetting>("@integratop/retailcrm-transport-api-effect/StatusSetting")({
+export class StatusSetting extends S.Class<StatusSetting>(
+  "@integratop/retailcrm-transport-api-effect/StatusSetting",
+)({
   delivered: S.optionalWith(ChannelFeature, { nullable: true }),
   read: S.optionalWith(ChannelFeature, { nullable: true }),
 }) {}
@@ -194,7 +210,9 @@ export class StatusSetting extends S.Class<StatusSetting>("@integratop/retailcrm
 /**
  * Поддержка типов быстрых ответов
  */
-export class Suggestions extends S.Class<Suggestions>("@integratop/retailcrm-transport-api-effect/Suggestions")({
+export class Suggestions extends S.Class<Suggestions>(
+  "@integratop/retailcrm-transport-api-effect/Suggestions",
+)({
   email: S.optionalWith(ChannelFeature, { nullable: true }),
   phone: S.optionalWith(ChannelFeature, { nullable: true }),
   text: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -204,7 +222,9 @@ export class Suggestions extends S.Class<Suggestions>("@integratop/retailcrm-tra
 /**
  * Поддержка шаблонов сообщений
  */
-export class TemplateSetting extends S.Class<TemplateSetting>("@integratop/retailcrm-transport-api-effect/TemplateSetting")({
+export class TemplateSetting extends S.Class<TemplateSetting>(
+  "@integratop/retailcrm-transport-api-effect/TemplateSetting",
+)({
   /**
    * Поддержка создания шаблонов в системе
    */
@@ -230,7 +250,9 @@ export class WAChannelStatus extends S.Literal(
 /**
  * Свойства канала WhatsApp
  */
-export class WAChannelProperties extends S.Class<WAChannelProperties>("@integratop/retailcrm-transport-api-effect/WAChannelProperties")({
+export class WAChannelProperties extends S.Class<WAChannelProperties>(
+  "@integratop/retailcrm-transport-api-effect/WAChannelProperties",
+)({
   channel_quality: S.optionalWith(WAChannelQuality, { nullable: true }),
   channel_status: S.optionalWith(WAChannelStatus, { nullable: true }),
   tier: S.optionalWith(S.Int, { nullable: true }),
@@ -239,7 +261,9 @@ export class WAChannelProperties extends S.Class<WAChannelProperties>("@integrat
 /**
  * Поддержка работы с реакциями для сообщений
  */
-export class Reactions extends S.Class<Reactions>("@integratop/retailcrm-transport-api-effect/Reactions")({
+export class Reactions extends S.Class<Reactions>(
+  "@integratop/retailcrm-transport-api-effect/Reactions",
+)({
   /**
    * Словарь доступных реакций
    */
@@ -253,7 +277,9 @@ export class Reactions extends S.Class<Reactions>("@integratop/retailcrm-transpo
 /**
  * Настройки канала
  */
-export class ChannelSettings extends S.Class<ChannelSettings>("@integratop/retailcrm-transport-api-effect/ChannelSettings")({
+export class ChannelSettings extends S.Class<ChannelSettings>(
+  "@integratop/retailcrm-transport-api-effect/ChannelSettings",
+)({
   text: S.optionalWith(TextMessageSetting, { nullable: true }),
   audio: S.optionalWith(AudioMessageSetting, { nullable: true }),
   file: S.optionalWith(FileMessageSetting, { nullable: true }),
@@ -272,18 +298,20 @@ export class ChannelSettings extends S.Class<ChannelSettings>("@integratop/retai
 /**
  * Канал
  */
-export class Channel extends S.Class<Channel>("@integratop/retailcrm-transport-api-effect/Channel")({
-  id: S.Int,
-  external_id: S.optionalWith(S.String, { nullable: true }),
-  name: S.optionalWith(S.String, { nullable: true }),
-  type: ChannelType,
-  is_active: S.Boolean,
-  settings: S.optionalWith(ChannelSettings, { nullable: true }),
-  created_at: S.String,
-  updated_at: S.optionalWith(S.String, { nullable: true }),
-  activated_at: S.String,
-  deactivated_at: S.optionalWith(S.String, { nullable: true }),
-}) {}
+export class Channel extends S.Class<Channel>("@integratop/retailcrm-transport-api-effect/Channel")(
+  {
+    id: S.Int,
+    external_id: S.optionalWith(S.String, { nullable: true }),
+    name: S.optionalWith(S.String, { nullable: true }),
+    type: ChannelType,
+    is_active: S.Boolean,
+    settings: S.optionalWith(ChannelSettings, { nullable: true }),
+    created_at: S.String,
+    updated_at: S.optionalWith(S.String, { nullable: true }),
+    activated_at: S.String,
+    deactivated_at: S.optionalWith(S.String, { nullable: true }),
+  },
+) {}
 
 export class ListChannels200 extends S.Array(Channel) {}
 
@@ -373,7 +401,9 @@ export class FileType extends S.Literal("none", "image", "video", "file", "audio
 /**
  * Основная информация о файле
  */
-export class FileBase extends S.Class<FileBase>("@integratop/retailcrm-transport-api-effect/FileBase")({
+export class FileBase extends S.Class<FileBase>(
+  "@integratop/retailcrm-transport-api-effect/FileBase",
+)({
   /**
    * UUID загруженного файла
    */
@@ -468,7 +498,7 @@ export class DeactivateTemplateDefault extends S.Struct({
  * Пример вложения шаблона
  */
 export class TemplateExampleAttachment extends S.Class<TemplateExampleAttachment>(
-  "TemplateExampleAttachment",
+  "@integratop/retailcrm-transport-api-effect/TemplateExampleAttachment",
 )({
   /**
    * UID загруженного файла
@@ -483,7 +513,9 @@ export class TemplateExampleAttachment extends S.Class<TemplateExampleAttachment
 /**
  * Пример шаблона
  */
-export class TemplateExample extends S.Class<TemplateExample>("@integratop/retailcrm-transport-api-effect/TemplateExample")({
+export class TemplateExample extends S.Class<TemplateExample>(
+  "@integratop/retailcrm-transport-api-effect/TemplateExample",
+)({
   /**
    * Вложения шаблона
    */
@@ -536,7 +568,9 @@ export class TemplateButtonType extends S.Literal("plain", "phone", "url") {}
 /**
  * Кнопка шаблона
  */
-export class TemplateButton extends S.Class<TemplateButton>("@integratop/retailcrm-transport-api-effect/TemplateButton")({
+export class TemplateButton extends S.Class<TemplateButton>(
+  "@integratop/retailcrm-transport-api-effect/TemplateButton",
+)({
   /**
    * Название кнопки
    */
@@ -555,7 +589,9 @@ export class TemplateButton extends S.Class<TemplateButton>("@integratop/retailc
 /**
  * Список кнопок шаблона
  */
-export class TemplateButtons extends S.Class<TemplateButtons>("@integratop/retailcrm-transport-api-effect/TemplateButtons")({
+export class TemplateButtons extends S.Class<TemplateButtons>(
+  "@integratop/retailcrm-transport-api-effect/TemplateButtons",
+)({
   items: S.optionalWith(S.Array(TemplateButton), { nullable: true }),
 }) {}
 
@@ -567,7 +603,9 @@ export class TemplateHeaderContentType extends S.Literal("text", "document", "im
 /**
  * Содержимое заголовка шаблона
  */
-export class TemplateHeaderContent extends S.Class<TemplateHeaderContent>("@integratop/retailcrm-transport-api-effect/TemplateHeaderContent")({
+export class TemplateHeaderContent extends S.Class<TemplateHeaderContent>(
+  "@integratop/retailcrm-transport-api-effect/TemplateHeaderContent",
+)({
   type: TemplateHeaderContentType,
   /**
    * Текстовое содержимое секции заголовка (для типа контента `text`)
@@ -578,7 +616,9 @@ export class TemplateHeaderContent extends S.Class<TemplateHeaderContent>("@inte
 /**
  * Секция заголовка шаблона
  */
-export class TemplateHeader extends S.Class<TemplateHeader>("@integratop/retailcrm-transport-api-effect/TemplateHeader")({
+export class TemplateHeader extends S.Class<TemplateHeader>(
+  "@integratop/retailcrm-transport-api-effect/TemplateHeader",
+)({
   content: S.optionalWith(TemplateHeaderContent, { nullable: true }),
 }) {}
 
@@ -595,7 +635,9 @@ export class TemplateVarType extends S.Literal(0, 1, 2, 3) {}
 /**
  * Элемент шаблона
  */
-export class TemplateItem extends S.Class<TemplateItem>("@integratop/retailcrm-transport-api-effect/TemplateItem")({
+export class TemplateItem extends S.Class<TemplateItem>(
+  "@integratop/retailcrm-transport-api-effect/TemplateItem",
+)({
   type: S.optionalWith(TemplateItemType, { nullable: true }),
   /**
    * Текст элемента шаблона (для типа `text`)
@@ -615,7 +657,9 @@ export class TemplateQuality extends S.Literal("pending", "high", "medium", "low
 /**
  * Базовый шаблон
  */
-export class Template extends S.Class<Template>("@integratop/retailcrm-transport-api-effect/Template")({
+export class Template extends S.Class<Template>(
+  "@integratop/retailcrm-transport-api-effect/Template",
+)({
   /**
    * Идентификатор шаблона
    */
@@ -710,7 +754,9 @@ export class MessageAction extends S.Literal("edit", "delete", "quote") {}
 /**
  * Диалог сообщения
  */
-export class MessageDialog extends S.Class<MessageDialog>("@integratop/retailcrm-transport-api-effect/MessageDialog")({
+export class MessageDialog extends S.Class<MessageDialog>(
+  "@integratop/retailcrm-transport-api-effect/MessageDialog",
+)({
   /**
    * Идентификатор диалога
    */
@@ -735,7 +781,9 @@ export class MessageErrorCode extends S.Literal(
 /**
  * Подробности ошибки сообщения (только для сообщений со статусом `failed`)
  */
-export class MessageError extends S.Class<MessageError>("@integratop/retailcrm-transport-api-effect/MessageError")({
+export class MessageError extends S.Class<MessageError>(
+  "@integratop/retailcrm-transport-api-effect/MessageError",
+)({
   code: MessageErrorCode,
   /**
    * Текстовое описание ошибки
@@ -751,61 +799,63 @@ export class UserType extends S.Literal("user", "bot", "customer", "channel") {}
 /**
  * Сведения о пользователе
  */
-export class UserRef extends S.Class<UserRef>("@integratop/retailcrm-transport-api-effect/UserRef")({
-  /**
-   * Идентификатор пользователя
-   */
-  id: S.Int,
-  /**
-   * Индикатор статуса пользователя (только для пользователей типа "пользователь")
-   */
-  available: S.optionalWith(S.Boolean, { nullable: true }),
-  /**
-   * Аватар пользователя
-   */
-  avatar: S.optionalWith(S.String, { nullable: true }),
-  /**
-   * Электронная почта пользователя (только для пользователей типа "клиент")
-   */
-  email: S.optionalWith(S.String, { nullable: true }),
-  /**
-   * Внешний идентификатор пользователя
-   */
-  external_id: S.String,
-  /**
-   * Имя пользователя (только для типов "клиент" и "пользователь")
-   */
-  first_name: S.optionalWith(S.String, { nullable: true }),
-  /**
-   * Индикатор блокировки пользователя (только для пользователей типа "клиент")
-   */
-  is_blocked: S.optionalWith(S.Boolean, { nullable: true }),
-  /**
-   * Индикатор системного пользователя (только для пользователей типа "бот")
-   */
-  is_system: S.optionalWith(S.Boolean, { nullable: true }),
-  /**
-   * Индикатор технической учётной записи (только для пользователей типа "пользователь")
-   */
-  is_technical_account: S.optionalWith(S.Boolean, { nullable: true }),
-  /**
-   * Фамилия пользователя (только для типов "клиент" и "пользователь")
-   */
-  last_name: S.optionalWith(S.String, { nullable: true }),
-  /**
-   * Никнейм пользователя
-   */
-  name: S.String,
-  /**
-   * Номер телефона пользователя
-   */
-  phone: S.optionalWith(S.String, { nullable: true }),
-  type: UserType,
-  /**
-   * Имя пользователя (только для типа "клиент")
-   */
-  username: S.optionalWith(S.String, { nullable: true }),
-}) {}
+export class UserRef extends S.Class<UserRef>("@integratop/retailcrm-transport-api-effect/UserRef")(
+  {
+    /**
+     * Идентификатор пользователя
+     */
+    id: S.Int,
+    /**
+     * Индикатор статуса пользователя (только для пользователей типа "пользователь")
+     */
+    available: S.optionalWith(S.Boolean, { nullable: true }),
+    /**
+     * Аватар пользователя
+     */
+    avatar: S.optionalWith(S.String, { nullable: true }),
+    /**
+     * Электронная почта пользователя (только для пользователей типа "клиент")
+     */
+    email: S.optionalWith(S.String, { nullable: true }),
+    /**
+     * Внешний идентификатор пользователя
+     */
+    external_id: S.String,
+    /**
+     * Имя пользователя (только для типов "клиент" и "пользователь")
+     */
+    first_name: S.optionalWith(S.String, { nullable: true }),
+    /**
+     * Индикатор блокировки пользователя (только для пользователей типа "клиент")
+     */
+    is_blocked: S.optionalWith(S.Boolean, { nullable: true }),
+    /**
+     * Индикатор системного пользователя (только для пользователей типа "бот")
+     */
+    is_system: S.optionalWith(S.Boolean, { nullable: true }),
+    /**
+     * Индикатор технической учётной записи (только для пользователей типа "пользователь")
+     */
+    is_technical_account: S.optionalWith(S.Boolean, { nullable: true }),
+    /**
+     * Фамилия пользователя (только для типов "клиент" и "пользователь")
+     */
+    last_name: S.optionalWith(S.String, { nullable: true }),
+    /**
+     * Никнейм пользователя
+     */
+    name: S.String,
+    /**
+     * Номер телефона пользователя
+     */
+    phone: S.optionalWith(S.String, { nullable: true }),
+    type: UserType,
+    /**
+     * Имя пользователя (только для типа "клиент")
+     */
+    username: S.optionalWith(S.String, { nullable: true }),
+  },
+) {}
 
 /**
  * Звуковая диаграмма (только для сообщений типа "аудио")
@@ -815,7 +865,9 @@ export class Histogram extends S.Array(S.Int) {}
 /**
  * Прикреплённый файл сообщения
  */
-export class MessageFile extends S.Class<MessageFile>("@integratop/retailcrm-transport-api-effect/MessageFile")({
+export class MessageFile extends S.Class<MessageFile>(
+  "@integratop/retailcrm-transport-api-effect/MessageFile",
+)({
   /**
    * UUID прикреплённого файла
    */
@@ -873,7 +925,9 @@ export class Cost extends S.Class<Cost>("@integratop/retailcrm-transport-api-eff
 /**
  * Информация о доставке заказа
  */
-export class MessageOrderDelivery extends S.Class<MessageOrderDelivery>("@integratop/retailcrm-transport-api-effect/MessageOrderDelivery")({
+export class MessageOrderDelivery extends S.Class<MessageOrderDelivery>(
+  "@integratop/retailcrm-transport-api-effect/MessageOrderDelivery",
+)({
   /**
    * Адрес доставки
    */
@@ -892,7 +946,9 @@ export class MessageOrderDelivery extends S.Class<MessageOrderDelivery>("@integr
 /**
  * Количество
  */
-export class Quantity extends S.Class<Quantity>("@integratop/retailcrm-transport-api-effect/Quantity")({
+export class Quantity extends S.Class<Quantity>(
+  "@integratop/retailcrm-transport-api-effect/Quantity",
+)({
   /**
    * Единицы измерения
    */
@@ -906,7 +962,9 @@ export class Quantity extends S.Class<Quantity>("@integratop/retailcrm-transport
 /**
  * Товар заказа
  */
-export class MessageOrderItem extends S.Class<MessageOrderItem>("@integratop/retailcrm-transport-api-effect/MessageOrderItem")({
+export class MessageOrderItem extends S.Class<MessageOrderItem>(
+  "@integratop/retailcrm-transport-api-effect/MessageOrderItem",
+)({
   /**
    * Внешний идентификатор товара
    */
@@ -931,7 +989,7 @@ export class MessageOrderItem extends S.Class<MessageOrderItem>("@integratop/ret
  * Статус оплаты заказа
  */
 export class MessageOrderPaymentStatus extends S.Class<MessageOrderPaymentStatus>(
-  "MessageOrderPaymentStatus",
+  "@integratop/retailcrm-transport-api-effect/MessageOrderPaymentStatus",
 )({
   /**
    * Название оплаты
@@ -946,7 +1004,9 @@ export class MessageOrderPaymentStatus extends S.Class<MessageOrderPaymentStatus
 /**
  * Информация об оплате заказа
  */
-export class MessageOrderPayment extends S.Class<MessageOrderPayment>("@integratop/retailcrm-transport-api-effect/MessageOrderPayment")({
+export class MessageOrderPayment extends S.Class<MessageOrderPayment>(
+  "@integratop/retailcrm-transport-api-effect/MessageOrderPayment",
+)({
   amount: S.optionalWith(Cost, { nullable: true }),
   /**
    * Название оплаты
@@ -970,7 +1030,9 @@ export class MessageOrderStatusCode extends S.Literal(
 /**
  * Статус заказа
  */
-export class MessageOrderStatus extends S.Class<MessageOrderStatus>("@integratop/retailcrm-transport-api-effect/MessageOrderStatus")({
+export class MessageOrderStatus extends S.Class<MessageOrderStatus>(
+  "@integratop/retailcrm-transport-api-effect/MessageOrderStatus",
+)({
   code: S.optionalWith(MessageOrderStatusCode, { nullable: true }),
   /**
    * Название статуса
@@ -981,7 +1043,9 @@ export class MessageOrderStatus extends S.Class<MessageOrderStatus>("@integratop
 /**
  * Представляет детали заказа в сообщении
  */
-export class MessageOrder extends S.Class<MessageOrder>("@integratop/retailcrm-transport-api-effect/MessageOrder")({
+export class MessageOrder extends S.Class<MessageOrder>(
+  "@integratop/retailcrm-transport-api-effect/MessageOrder",
+)({
   /**
    * Внешний идентификатор заказа
    */
@@ -1015,7 +1079,9 @@ export class MessageOrder extends S.Class<MessageOrder>("@integratop/retailcrm-t
 /**
  * Описывает товар, упомянутый в сообщении
  */
-export class MessageProduct extends S.Class<MessageProduct>("@integratop/retailcrm-transport-api-effect/MessageProduct")({
+export class MessageProduct extends S.Class<MessageProduct>(
+  "@integratop/retailcrm-transport-api-effect/MessageProduct",
+)({
   /**
    * Идентификатор товара
    */
@@ -1068,7 +1134,9 @@ export class SuggestionType extends S.Literal("text", "email", "phone", "url") {
 /**
  * Предложение быстрого ответа
  */
-export class Suggestion extends S.Class<Suggestion>("@integratop/retailcrm-transport-api-effect/Suggestion")({
+export class Suggestion extends S.Class<Suggestion>(
+  "@integratop/retailcrm-transport-api-effect/Suggestion",
+)({
   /**
    * Данные быстрого ответа
    */
@@ -1084,7 +1152,7 @@ export class Suggestion extends S.Class<Suggestion>("@integratop/retailcrm-trans
  * Транспортные вложения
  */
 export class MessageTransportAttachments extends S.Class<MessageTransportAttachments>(
-  "MessageTransportAttachments",
+  "@integratop/retailcrm-transport-api-effect/MessageTransportAttachments",
 )({
   /**
    * Быстрые ответы
@@ -1123,7 +1191,9 @@ export class SystemAction extends S.Literal(
 /**
  * Цитируемое сообщение
  */
-export class QuoteMessage extends S.Class<QuoteMessage>("@integratop/retailcrm-transport-api-effect/QuoteMessage")({
+export class QuoteMessage extends S.Class<QuoteMessage>(
+  "@integratop/retailcrm-transport-api-effect/QuoteMessage",
+)({
   /**
    * Идентификатор цитируемого сообщения
    */
@@ -1147,54 +1217,56 @@ export class QuoteMessage extends S.Class<QuoteMessage>("@integratop/retailcrm-t
 /**
  * Текстовое сообщение
  */
-export class Message extends S.Class<Message>("@integratop/retailcrm-transport-api-effect/Message")({
-  /**
-   * Идентификатор сообщения
-   */
-  id: S.Int,
-  /**
-   * Доступные действия для сообщения
-   */
-  actions: S.optionalWith(S.Array(MessageAction), { nullable: true }),
-  /**
-   * Идентификатор чата
-   */
-  chat_id: S.Int,
-  dialog: S.optionalWith(MessageDialog, { nullable: true }),
-  error: S.optionalWith(MessageError, { nullable: true }),
-  from: S.optionalWith(UserRef, { nullable: true }),
-  /**
-   * Индикатор редактирования сообщения
-   */
-  is_edit: S.Boolean,
-  /**
-   * Индикатор прочтения сообщения
-   */
-  is_read: S.Boolean,
-  items: S.optionalWith(S.Array(MessageFile), { nullable: true }),
-  /**
-   * Аннотация медиа-данных (для медиа-сообщений)
-   */
-  note: S.optionalWith(S.String, { nullable: true }),
-  order: S.optionalWith(MessageOrder, { nullable: true }),
-  product: S.optionalWith(MessageProduct, { nullable: true }),
-  scope: MessageScope,
-  status: MessageStatus,
-  /**
-   * Время создания сообщения
-   */
-  time: S.String,
-  transport_attachments: S.optionalWith(MessageTransportAttachments, { nullable: true }),
-  type: MessageType,
-  action: SystemAction,
-  responsible: S.optionalWith(UserRef, { nullable: true }),
-  user: S.optionalWith(UserRef, { nullable: true }),
-  /**
-   * Текст сообщения
-   */
-  content: S.optionalWith(S.String, { nullable: true }),
-  quote: S.optionalWith(QuoteMessage, { nullable: true }),
-}) {}
+export class Message extends S.Class<Message>("@integratop/retailcrm-transport-api-effect/Message")(
+  {
+    /**
+     * Идентификатор сообщения
+     */
+    id: S.Int,
+    /**
+     * Доступные действия для сообщения
+     */
+    actions: S.optionalWith(S.Array(MessageAction), { nullable: true }),
+    /**
+     * Идентификатор чата
+     */
+    chat_id: S.Int,
+    dialog: S.optionalWith(MessageDialog, { nullable: true }),
+    error: S.optionalWith(MessageError, { nullable: true }),
+    from: S.optionalWith(UserRef, { nullable: true }),
+    /**
+     * Индикатор редактирования сообщения
+     */
+    is_edit: S.Boolean,
+    /**
+     * Индикатор прочтения сообщения
+     */
+    is_read: S.Boolean,
+    items: S.optionalWith(S.Array(MessageFile), { nullable: true }),
+    /**
+     * Аннотация медиа-данных (для медиа-сообщений)
+     */
+    note: S.optionalWith(S.String, { nullable: true }),
+    order: S.optionalWith(MessageOrder, { nullable: true }),
+    product: S.optionalWith(MessageProduct, { nullable: true }),
+    scope: MessageScope,
+    status: MessageStatus,
+    /**
+     * Время создания сообщения
+     */
+    time: S.String,
+    transport_attachments: S.optionalWith(MessageTransportAttachments, { nullable: true }),
+    type: MessageType,
+    action: SystemAction,
+    responsible: S.optionalWith(UserRef, { nullable: true }),
+    user: S.optionalWith(UserRef, { nullable: true }),
+    /**
+     * Текст сообщения
+     */
+    content: S.optionalWith(S.String, { nullable: true }),
+    quote: S.optionalWith(QuoteMessage, { nullable: true }),
+  },
+) {}
 
 export class DeleteMessageDefault extends S.Struct({
   /**

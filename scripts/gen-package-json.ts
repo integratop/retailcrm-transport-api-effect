@@ -13,6 +13,7 @@ const newJson = {
   license: input.license,
   keywords: input.keywords,
   dependencies: input.dependencies,
+  peerDependencies: input.peerDependencies,
   bin: input.bin,
   type: input.type,
   main: input.main,
