@@ -29,7 +29,7 @@
     "gen-client": "pnpm openapi-gen -s .schema.json > src/client.g.ts",
     "fix-client": "scripts/fix-client.ts < src/client.g.ts > src/._client.g.ts && mv src/._client.g.ts src/client.g.ts",
     "pretty-client": "pnpm prettier --write src/client.g.ts",
-    "src": "pnpm get-schema && pnpm gen-client && echo pnpm fix-client && pnpm pretty-client",
+    "src": "pnpm get-schema && pnpm gen-client && pnpm fix-client && pnpm pretty-client",
     "compile": "tsdown",
     "strip-comments": "scripts/strip-comments.ts ./dist/*.{*js,d.*}",
     "pretty-dist": "pnpm prettier --write ./dist/*.{*js,d.*}",

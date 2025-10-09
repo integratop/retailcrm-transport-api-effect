@@ -56,7 +56,7 @@ export class ChannelFeature extends S.Literal("none", "receive", "send", "both")
 /**
  * Поддержка текстовых сообщений
  */
-export class TextMessageSetting extends S.Class<TextMessageSetting>("TextMessageSetting")({
+export class TextMessageSetting extends S.Class<TextMessageSetting>("@integratop/retailcrm-transport-api-effect/TextMessageSetting")({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -71,7 +71,7 @@ export class TextMessageSetting extends S.Class<TextMessageSetting>("TextMessage
 /**
  * Поддержка аудио сообщений
  */
-export class AudioMessageSetting extends S.Class<AudioMessageSetting>("AudioMessageSetting")({
+export class AudioMessageSetting extends S.Class<AudioMessageSetting>("@integratop/retailcrm-transport-api-effect/AudioMessageSetting")({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   quoting: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -89,7 +89,7 @@ export class AudioMessageSetting extends S.Class<AudioMessageSetting>("AudioMess
 /**
  * Поддержка файловых сообщений
  */
-export class FileMessageSetting extends S.Class<FileMessageSetting>("FileMessageSetting")({
+export class FileMessageSetting extends S.Class<FileMessageSetting>("@integratop/retailcrm-transport-api-effect/FileMessageSetting")({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -112,7 +112,7 @@ export class FileMessageSetting extends S.Class<FileMessageSetting>("FileMessage
 /**
  * Поддержка медиа-сообщений
  */
-export class ImageMessageSetting extends S.Class<ImageMessageSetting>("ImageMessageSetting")({
+export class ImageMessageSetting extends S.Class<ImageMessageSetting>("@integratop/retailcrm-transport-api-effect/ImageMessageSetting")({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -135,7 +135,7 @@ export class ImageMessageSetting extends S.Class<ImageMessageSetting>("ImageMess
 /**
  * Поддержка сообщений о заказах
  */
-export class OrderMessageSetting extends S.Class<OrderMessageSetting>("OrderMessageSetting")({
+export class OrderMessageSetting extends S.Class<OrderMessageSetting>("@integratop/retailcrm-transport-api-effect/OrderMessageSetting")({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -146,7 +146,7 @@ export class OrderMessageSetting extends S.Class<OrderMessageSetting>("OrderMess
 /**
  * Поддержка сообщений о продуктах
  */
-export class ProductMessageSetting extends S.Class<ProductMessageSetting>("ProductMessageSetting")({
+export class ProductMessageSetting extends S.Class<ProductMessageSetting>("@integratop/retailcrm-transport-api-effect/ProductMessageSetting")({
   creating: S.optionalWith(ChannelFeature, { nullable: true }),
   deleting: S.optionalWith(ChannelFeature, { nullable: true }),
   editing: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -177,7 +177,7 @@ export class SendingPolicyOutgoing extends S.Literal("allowed", "restricted") {}
 /**
  * Политика отправки сообщений
  */
-export class SendingPolicy extends S.Class<SendingPolicy>("SendingPolicy")({
+export class SendingPolicy extends S.Class<SendingPolicy>("@integratop/retailcrm-transport-api-effect/SendingPolicy")({
   after_reply_timeout: S.optionalWith(SendingPolicyAfterReplyTimeout, { nullable: true }),
   new_customer: S.optionalWith(SendingPolicyNewCustomer, { nullable: true }),
   outgoing: S.optionalWith(SendingPolicyOutgoing, { nullable: true }),
@@ -186,7 +186,7 @@ export class SendingPolicy extends S.Class<SendingPolicy>("SendingPolicy")({
 /**
  * Передача информации о статусе сообщения
  */
-export class StatusSetting extends S.Class<StatusSetting>("StatusSetting")({
+export class StatusSetting extends S.Class<StatusSetting>("@integratop/retailcrm-transport-api-effect/StatusSetting")({
   delivered: S.optionalWith(ChannelFeature, { nullable: true }),
   read: S.optionalWith(ChannelFeature, { nullable: true }),
 }) {}
@@ -194,7 +194,7 @@ export class StatusSetting extends S.Class<StatusSetting>("StatusSetting")({
 /**
  * Поддержка типов быстрых ответов
  */
-export class Suggestions extends S.Class<Suggestions>("Suggestions")({
+export class Suggestions extends S.Class<Suggestions>("@integratop/retailcrm-transport-api-effect/Suggestions")({
   email: S.optionalWith(ChannelFeature, { nullable: true }),
   phone: S.optionalWith(ChannelFeature, { nullable: true }),
   text: S.optionalWith(ChannelFeature, { nullable: true }),
@@ -204,7 +204,7 @@ export class Suggestions extends S.Class<Suggestions>("Suggestions")({
 /**
  * Поддержка шаблонов сообщений
  */
-export class TemplateSetting extends S.Class<TemplateSetting>("TemplateSetting")({
+export class TemplateSetting extends S.Class<TemplateSetting>("@integratop/retailcrm-transport-api-effect/TemplateSetting")({
   /**
    * Поддержка создания шаблонов в системе
    */
@@ -230,7 +230,7 @@ export class WAChannelStatus extends S.Literal(
 /**
  * Свойства канала WhatsApp
  */
-export class WAChannelProperties extends S.Class<WAChannelProperties>("WAChannelProperties")({
+export class WAChannelProperties extends S.Class<WAChannelProperties>("@integratop/retailcrm-transport-api-effect/WAChannelProperties")({
   channel_quality: S.optionalWith(WAChannelQuality, { nullable: true }),
   channel_status: S.optionalWith(WAChannelStatus, { nullable: true }),
   tier: S.optionalWith(S.Int, { nullable: true }),
@@ -239,7 +239,7 @@ export class WAChannelProperties extends S.Class<WAChannelProperties>("WAChannel
 /**
  * Поддержка работы с реакциями для сообщений
  */
-export class Reactions extends S.Class<Reactions>("Reactions")({
+export class Reactions extends S.Class<Reactions>("@integratop/retailcrm-transport-api-effect/Reactions")({
   /**
    * Словарь доступных реакций
    */
@@ -253,7 +253,7 @@ export class Reactions extends S.Class<Reactions>("Reactions")({
 /**
  * Настройки канала
  */
-export class ChannelSettings extends S.Class<ChannelSettings>("ChannelSettings")({
+export class ChannelSettings extends S.Class<ChannelSettings>("@integratop/retailcrm-transport-api-effect/ChannelSettings")({
   text: S.optionalWith(TextMessageSetting, { nullable: true }),
   audio: S.optionalWith(AudioMessageSetting, { nullable: true }),
   file: S.optionalWith(FileMessageSetting, { nullable: true }),
@@ -272,7 +272,7 @@ export class ChannelSettings extends S.Class<ChannelSettings>("ChannelSettings")
 /**
  * Канал
  */
-export class Channel extends S.Class<Channel>("Channel")({
+export class Channel extends S.Class<Channel>("@integratop/retailcrm-transport-api-effect/Channel")({
   id: S.Int,
   external_id: S.optionalWith(S.String, { nullable: true }),
   name: S.optionalWith(S.String, { nullable: true }),
@@ -287,7 +287,7 @@ export class Channel extends S.Class<Channel>("Channel")({
 
 export class ListChannels200 extends S.Array(Channel) {}
 
-export class ListChannelsdefault extends S.Struct({
+export class ListChannelsDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -316,7 +316,7 @@ export class ActivateChannel201 extends S.Struct({
   activated_at: S.String,
 }) {}
 
-export class ActivateChanneldefault extends S.Struct({
+export class ActivateChannelDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -336,7 +336,7 @@ export class UpdateChannel200 extends S.Struct({
   updated_at: S.String,
 }) {}
 
-export class UpdateChanneldefault extends S.Struct({
+export class UpdateChannelDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -356,7 +356,7 @@ export class DeactivateChannel200 extends S.Struct({
   deactivated_at: S.String,
 }) {}
 
-export class DeactivateChanneldefault extends S.Struct({
+export class DeactivateChannelDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -373,7 +373,7 @@ export class FileType extends S.Literal("none", "image", "video", "file", "audio
 /**
  * Основная информация о файле
  */
-export class FileBase extends S.Class<FileBase>("FileBase")({
+export class FileBase extends S.Class<FileBase>("@integratop/retailcrm-transport-api-effect/FileBase")({
   /**
    * UUID загруженного файла
    */
@@ -385,14 +385,14 @@ export class FileBase extends S.Class<FileBase>("FileBase")({
   type: FileType,
 }) {}
 
-export class UploadFiledefault extends S.Struct({
+export class UploadFileDefault extends S.Struct({
   /**
    * Список ошибок
    */
   errors: S.optionalWith(S.Array(S.String), { nullable: true }),
 }) {}
 
-export class UploadFileByUrldefault extends S.Struct({
+export class UploadFileByUrlDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -404,7 +404,7 @@ export class GetFileUrlParams extends S.Struct({}) {}
 /**
  * Основная информация о файле
  */
-export class File extends S.Class<File>("File")({
+export class File extends S.Class<File>("@integratop/retailcrm-transport-api-effect/File")({
   /**
    * URL для скачивания файла
    */
@@ -424,7 +424,7 @@ export class File extends S.Class<File>("File")({
   type: FileType,
 }) {}
 
-export class GetFileUrldefault extends S.Struct({
+export class GetFileUrlDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -435,7 +435,7 @@ export class ActivateTemplateParams extends S.Struct({}) {}
 
 export class ActivateTemplate200 extends S.Struct({}) {}
 
-export class ActivateTemplatedefault extends S.Struct({
+export class ActivateTemplateDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -446,7 +446,7 @@ export class UpdateTemplateParams extends S.Struct({}) {}
 
 export class UpdateTemplate200 extends S.Struct({}) {}
 
-export class UpdateTemplatedefault extends S.Struct({
+export class UpdateTemplateDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -457,7 +457,7 @@ export class DeactivateTemplateParams extends S.Struct({}) {}
 
 export class DeactivateTemplate200 extends S.Struct({}) {}
 
-export class DeactivateTemplatedefault extends S.Struct({
+export class DeactivateTemplateDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -483,7 +483,7 @@ export class TemplateExampleAttachment extends S.Class<TemplateExampleAttachment
 /**
  * Пример шаблона
  */
-export class TemplateExample extends S.Class<TemplateExample>("TemplateExample")({
+export class TemplateExample extends S.Class<TemplateExample>("@integratop/retailcrm-transport-api-effect/TemplateExample")({
   /**
    * Вложения шаблона
    */
@@ -536,7 +536,7 @@ export class TemplateButtonType extends S.Literal("plain", "phone", "url") {}
 /**
  * Кнопка шаблона
  */
-export class TemplateButton extends S.Class<TemplateButton>("TemplateButton")({
+export class TemplateButton extends S.Class<TemplateButton>("@integratop/retailcrm-transport-api-effect/TemplateButton")({
   /**
    * Название кнопки
    */
@@ -555,7 +555,7 @@ export class TemplateButton extends S.Class<TemplateButton>("TemplateButton")({
 /**
  * Список кнопок шаблона
  */
-export class TemplateButtons extends S.Class<TemplateButtons>("TemplateButtons")({
+export class TemplateButtons extends S.Class<TemplateButtons>("@integratop/retailcrm-transport-api-effect/TemplateButtons")({
   items: S.optionalWith(S.Array(TemplateButton), { nullable: true }),
 }) {}
 
@@ -567,7 +567,7 @@ export class TemplateHeaderContentType extends S.Literal("text", "document", "im
 /**
  * Содержимое заголовка шаблона
  */
-export class TemplateHeaderContent extends S.Class<TemplateHeaderContent>("TemplateHeaderContent")({
+export class TemplateHeaderContent extends S.Class<TemplateHeaderContent>("@integratop/retailcrm-transport-api-effect/TemplateHeaderContent")({
   type: TemplateHeaderContentType,
   /**
    * Текстовое содержимое секции заголовка (для типа контента `text`)
@@ -578,7 +578,7 @@ export class TemplateHeaderContent extends S.Class<TemplateHeaderContent>("Templ
 /**
  * Секция заголовка шаблона
  */
-export class TemplateHeader extends S.Class<TemplateHeader>("TemplateHeader")({
+export class TemplateHeader extends S.Class<TemplateHeader>("@integratop/retailcrm-transport-api-effect/TemplateHeader")({
   content: S.optionalWith(TemplateHeaderContent, { nullable: true }),
 }) {}
 
@@ -595,7 +595,7 @@ export class TemplateVarType extends S.Literal(0, 1, 2, 3) {}
 /**
  * Элемент шаблона
  */
-export class TemplateItem extends S.Class<TemplateItem>("TemplateItem")({
+export class TemplateItem extends S.Class<TemplateItem>("@integratop/retailcrm-transport-api-effect/TemplateItem")({
   type: S.optionalWith(TemplateItemType, { nullable: true }),
   /**
    * Текст элемента шаблона (для типа `text`)
@@ -615,7 +615,7 @@ export class TemplateQuality extends S.Literal("pending", "high", "medium", "low
 /**
  * Базовый шаблон
  */
-export class Template extends S.Class<Template>("Template")({
+export class Template extends S.Class<Template>("@integratop/retailcrm-transport-api-effect/Template")({
   /**
    * Идентификатор шаблона
    */
@@ -664,7 +664,7 @@ export class Template extends S.Class<Template>("Template")({
 
 export class GetTemplates200 extends S.Array(Template) {}
 
-export class GetTemplatesdefault extends S.Struct({
+export class GetTemplatesDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -673,7 +673,7 @@ export class GetTemplatesdefault extends S.Struct({
 
 export class EditMessage200 extends S.Struct({}) {}
 
-export class EditMessagedefault extends S.Struct({
+export class EditMessageDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -695,7 +695,7 @@ export class SendMessage200 extends S.Struct({
   warnings: S.optionalWith(S.Array(S.String), { nullable: true }),
 }) {}
 
-export class SendMessagedefault extends S.Struct({
+export class SendMessageDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -710,7 +710,7 @@ export class MessageAction extends S.Literal("edit", "delete", "quote") {}
 /**
  * Диалог сообщения
  */
-export class MessageDialog extends S.Class<MessageDialog>("MessageDialog")({
+export class MessageDialog extends S.Class<MessageDialog>("@integratop/retailcrm-transport-api-effect/MessageDialog")({
   /**
    * Идентификатор диалога
    */
@@ -735,7 +735,7 @@ export class MessageErrorCode extends S.Literal(
 /**
  * Подробности ошибки сообщения (только для сообщений со статусом `failed`)
  */
-export class MessageError extends S.Class<MessageError>("MessageError")({
+export class MessageError extends S.Class<MessageError>("@integratop/retailcrm-transport-api-effect/MessageError")({
   code: MessageErrorCode,
   /**
    * Текстовое описание ошибки
@@ -751,7 +751,7 @@ export class UserType extends S.Literal("user", "bot", "customer", "channel") {}
 /**
  * Сведения о пользователе
  */
-export class UserRef extends S.Class<UserRef>("UserRef")({
+export class UserRef extends S.Class<UserRef>("@integratop/retailcrm-transport-api-effect/UserRef")({
   /**
    * Идентификатор пользователя
    */
@@ -815,7 +815,7 @@ export class Histogram extends S.Array(S.Int) {}
 /**
  * Прикреплённый файл сообщения
  */
-export class MessageFile extends S.Class<MessageFile>("MessageFile")({
+export class MessageFile extends S.Class<MessageFile>("@integratop/retailcrm-transport-api-effect/MessageFile")({
   /**
    * UUID прикреплённого файла
    */
@@ -859,7 +859,7 @@ export class MessageFile extends S.Class<MessageFile>("MessageFile")({
 /**
  * Представляет денежную сумму с соответствующей валютой
  */
-export class Cost extends S.Class<Cost>("Cost")({
+export class Cost extends S.Class<Cost>("@integratop/retailcrm-transport-api-effect/Cost")({
   /**
    * Код валюты
    */
@@ -873,7 +873,7 @@ export class Cost extends S.Class<Cost>("Cost")({
 /**
  * Информация о доставке заказа
  */
-export class MessageOrderDelivery extends S.Class<MessageOrderDelivery>("MessageOrderDelivery")({
+export class MessageOrderDelivery extends S.Class<MessageOrderDelivery>("@integratop/retailcrm-transport-api-effect/MessageOrderDelivery")({
   /**
    * Адрес доставки
    */
@@ -892,7 +892,7 @@ export class MessageOrderDelivery extends S.Class<MessageOrderDelivery>("Message
 /**
  * Количество
  */
-export class Quantity extends S.Class<Quantity>("Quantity")({
+export class Quantity extends S.Class<Quantity>("@integratop/retailcrm-transport-api-effect/Quantity")({
   /**
    * Единицы измерения
    */
@@ -906,7 +906,7 @@ export class Quantity extends S.Class<Quantity>("Quantity")({
 /**
  * Товар заказа
  */
-export class MessageOrderItem extends S.Class<MessageOrderItem>("MessageOrderItem")({
+export class MessageOrderItem extends S.Class<MessageOrderItem>("@integratop/retailcrm-transport-api-effect/MessageOrderItem")({
   /**
    * Внешний идентификатор товара
    */
@@ -946,7 +946,7 @@ export class MessageOrderPaymentStatus extends S.Class<MessageOrderPaymentStatus
 /**
  * Информация об оплате заказа
  */
-export class MessageOrderPayment extends S.Class<MessageOrderPayment>("MessageOrderPayment")({
+export class MessageOrderPayment extends S.Class<MessageOrderPayment>("@integratop/retailcrm-transport-api-effect/MessageOrderPayment")({
   amount: S.optionalWith(Cost, { nullable: true }),
   /**
    * Название оплаты
@@ -970,7 +970,7 @@ export class MessageOrderStatusCode extends S.Literal(
 /**
  * Статус заказа
  */
-export class MessageOrderStatus extends S.Class<MessageOrderStatus>("MessageOrderStatus")({
+export class MessageOrderStatus extends S.Class<MessageOrderStatus>("@integratop/retailcrm-transport-api-effect/MessageOrderStatus")({
   code: S.optionalWith(MessageOrderStatusCode, { nullable: true }),
   /**
    * Название статуса
@@ -981,7 +981,7 @@ export class MessageOrderStatus extends S.Class<MessageOrderStatus>("MessageOrde
 /**
  * Представляет детали заказа в сообщении
  */
-export class MessageOrder extends S.Class<MessageOrder>("MessageOrder")({
+export class MessageOrder extends S.Class<MessageOrder>("@integratop/retailcrm-transport-api-effect/MessageOrder")({
   /**
    * Внешний идентификатор заказа
    */
@@ -1015,7 +1015,7 @@ export class MessageOrder extends S.Class<MessageOrder>("MessageOrder")({
 /**
  * Описывает товар, упомянутый в сообщении
  */
-export class MessageProduct extends S.Class<MessageProduct>("MessageProduct")({
+export class MessageProduct extends S.Class<MessageProduct>("@integratop/retailcrm-transport-api-effect/MessageProduct")({
   /**
    * Идентификатор товара
    */
@@ -1068,7 +1068,7 @@ export class SuggestionType extends S.Literal("text", "email", "phone", "url") {
 /**
  * Предложение быстрого ответа
  */
-export class Suggestion extends S.Class<Suggestion>("Suggestion")({
+export class Suggestion extends S.Class<Suggestion>("@integratop/retailcrm-transport-api-effect/Suggestion")({
   /**
    * Данные быстрого ответа
    */
@@ -1123,7 +1123,7 @@ export class SystemAction extends S.Literal(
 /**
  * Цитируемое сообщение
  */
-export class QuoteMessage extends S.Class<QuoteMessage>("QuoteMessage")({
+export class QuoteMessage extends S.Class<QuoteMessage>("@integratop/retailcrm-transport-api-effect/QuoteMessage")({
   /**
    * Идентификатор цитируемого сообщения
    */
@@ -1147,7 +1147,7 @@ export class QuoteMessage extends S.Class<QuoteMessage>("QuoteMessage")({
 /**
  * Текстовое сообщение
  */
-export class Message extends S.Class<Message>("Message")({
+export class Message extends S.Class<Message>("@integratop/retailcrm-transport-api-effect/Message")({
   /**
    * Идентификатор сообщения
    */
@@ -1196,7 +1196,7 @@ export class Message extends S.Class<Message>("Message")({
   quote: S.optionalWith(QuoteMessage, { nullable: true }),
 }) {}
 
-export class DeleteMessagedefault extends S.Struct({
+export class DeleteMessageDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -1218,7 +1218,7 @@ export class SendHistoryMessage200 extends S.Struct({
   warnings: S.optionalWith(S.Array(S.String), { nullable: true }),
 }) {}
 
-export class SendHistoryMessagedefault extends S.Struct({
+export class SendHistoryMessageDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -1227,7 +1227,7 @@ export class SendHistoryMessagedefault extends S.Struct({
 
 export class AckMessage200 extends S.Struct({}) {}
 
-export class AckMessagedefault extends S.Struct({
+export class AckMessageDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -1236,7 +1236,7 @@ export class AckMessagedefault extends S.Struct({
 
 export class MarkMessageRead200 extends S.Struct({}) {}
 
-export class MarkMessageReaddefault extends S.Struct({
+export class MarkMessageReadDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -1250,14 +1250,14 @@ export class MarkMessagesReadUntil200 extends S.Struct({
   ids: S.Array(S.Int),
 }) {}
 
-export class MarkMessagesReadUntildefault extends S.Struct({
+export class MarkMessagesReadUntilDefault extends S.Struct({
   /**
    * Список ошибок
    */
   errors: S.optionalWith(S.Array(S.String), { nullable: true }),
 }) {}
 
-export class RestoreMessagedefault extends S.Struct({
+export class RestoreMessageDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -1266,7 +1266,7 @@ export class RestoreMessagedefault extends S.Struct({
 
 export class AddMessageReaction200 extends S.Struct({}) {}
 
-export class AddMessageReactiondefault extends S.Struct({
+export class AddMessageReactionDefault extends S.Struct({
   /**
    * Список ошибок
    */
@@ -1275,7 +1275,7 @@ export class AddMessageReactiondefault extends S.Struct({
 
 export class DeleteMessageReaction200 extends S.Struct({}) {}
 
-export class DeleteMessageReactiondefault extends S.Struct({
+export class DeleteMessageReactionDefault extends S.Struct({
   /**
    * Список ошибок
    */
