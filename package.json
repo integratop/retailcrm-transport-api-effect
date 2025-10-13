@@ -45,7 +45,7 @@
     "effect": "^3.15.0"
   },
   "devDependencies": {
-    "@effect/platform": "0.82.8",
+    "@effect/platform": "0.92.1",
     "@effect/platform-node": "0.82.0",
     "@integratop/retailcrm-transport-api-schema": "1.0.0",
     "@tim-smart/openapi-gen": "0.4.13",
